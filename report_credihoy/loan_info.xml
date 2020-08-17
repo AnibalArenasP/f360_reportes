@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<template id="report_loan_information">
+			<t t-call="web.external_layout">
+				<t t-set="doc" t-value="doc.with_context({'lang':doc.partner_id.lang})" />
+				<div class="page">
+					<div class="oe_structure" />
+					<div class="row">
+						<div class="col-xs-6">
+						<strong>Name:</strong>
+						<span t-field="doc.partner_id.title"/>
+						<span t-field="doc.partner_id.name"/>
+						<br/>
+						<span t-field="doc.partner_id.street"/>
+						<span t-field="doc.partner_id.street2"/>
+						<br/>
+                        <span t-field="doc.partner_id.city"/>
+                        <span t-field="doc.partner_id.zip"/>
+                        <br/>
+                        <span t-field="doc.partner_id.state_id.name"/>
+                        <span t-field="doc.partner_id.country_id.name"/>
+                        </div>
+                        
+                        </div>
+                        <br />
+                        <br />
+                        
+                        <p>Dear Customer</p>
+                        <p>    Following are the details for the Loan and installment that passed and the installment details are as follows, in case of any queries please contact to our office </p>
+						<br />
+						<h3>Loan Details</h3>
+						<table class="table table-condensed table-bordered">
+                        <tr>
+                        <td><strong>Description</strong></td>
+                        <td><span t-field="doc.name"/></td>
+                        <td></td>
+                        <td></td>
+                        </tr>
+                        <tr>
+                        <td><strong>Apply Amount</strong></td>
+                        <td><span t-field="doc.loan_amount"/></td>
+                        <td><strong>Approve Amount</strong></td>
+                        <td><span t-field="doc.approve_amount"/></td>
+                        
+                        </tr>
+                        <tr>
+                        <td><strong>Apply Date</strong></td>
+                        <td><span t-field="doc.apply_date"/></td>
+                        <td><strong>Approve Date</strong></td>
+                        <td><span t-field="doc.approve_date"/></td>
+                        </tr>
+                        <tr>
+                        <td><strong>Start Date</strong></td>
+                        <td><span t-field="doc.approve_date"/></td>
+                        <td><strong>End Date</strong></td>
+                        <td><t t-if="ending_date"><span t-esc="ending_date"/></t></td>
+                        </tr>
+                        <tr>
+                        <td><strong>Installment Amount</strong></td>
+                        <!-- <t t-set="capital" t-value="doc.installment_id.capital" />
+                        <t t-set="interest" t-value="doc.installment_id.interest" /> -->
+                        <td><t t-if="doc.payment_schedule_ids"><t t-esc="'{0:,.2f}'.format(doc.payment_schedule_ids[0].total)" /></t></td>
+                        <td><strong>No of Installment</strong></td>
+                        <td><span t-field="doc.total_installment"/></td>
+                        </tr>
+                        <tr>
+                        <td><strong>Interest Rate</strong></td>
+                        <td><span t-esc="'%.2f'%(doc.interest_rate)"/></td>
+                        <td><strong>Total Interest</strong></td>
+                        <td><span t-field="doc.interest"/></td>
+                        </tr>
+                        </table>
+						<table class="table table-condensed">
+	                        <thead>
+	                            <th>Description</th>
+	                            <th>Installment</th>
+	                            <th>Interest</th>
+	                            <th>SubTotal</th>
+	                            <th>Total</th>
+	                        </thead>
+	                        <tbody>
+		                        <tr style="page-break-inside: avoid !important" t-foreach="doc.payment_schedule_ids" t-as="line">
+		                               <td><span t-field="line.name" /></td>
+		                               <td align="right"><span t-field="line.capital" /></td>
+		                               <td align="right"><span t-field="line.interest" /></td>
+		                               <td align="right"><span t-field="line.total" /></td>
+		                               <td align="right"><t t-esc="'{0:,.2f}'.format(amount_total(line))" t-as="l"/>
+		                                    <!-- <span t-esc="l['total']" ></span> -->
+		                               </td>
+		                        </tr>
+	                       </tbody>
+                        
+                        </table>
+						
+						
+					
+				</div>
+			</t>
+		</template>
+
+
+		<template id="loan_info">
+			<t t-call="web.html_container">
+				<t t-foreach="docs" t-as="doc">
+					<t t-call="pragtech_loan_advance.report_loan_information" t-lang="doc.partner_id.lang" />
+				</t>
+			</t>
+		</template>
+	</data>
+</odoo>

@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+		<!-- <template id="custom_layout_header">
+			<div class="row">
+				<div class="col-xs-4">
+					<img t-if="o.loan_id.company_id.logo" width="100px" height="100px"
+						t-att-src="'data:image/png;base64,%s' % to_text(o.loan_id.company_id.logo)" />
+				</div>
+				<div class="col-xs-8" style="padding-bottom:40px;">
+					<h2>
+						<span>Project Finance Payment Receipt</span>
+					</h2>
+				</div>
+			</div>
+
+			<div class="row col-xs-12">
+				<span>
+					<t t-if="o.loan_id.company_id.street">
+						<span t-esc="o.loan_id.company_id.street" />
+						,
+					</t>
+					<t t-if="o.loan_id.company_id.street2">
+						<span t-esc="o.loan_id.company_id.street2" />
+						,
+					</t>
+					<t t-if="o.loan_id.company_id.city">
+						<span t-esc="o.loan_id.company_id.city" />
+						,
+					</t>
+					<t t-if="o.loan_id.company_id.state_id">
+						<span t-esc="o.loan_id.company_id.state_id.name" />
+						,
+					</t>
+					<t t-if="o.loan_id.company_id.zip">
+						<span t-esc="o.loan_id.company_id.zip" />
+						,
+					</t>
+					<t t-if="o.loan_id.company_id.country_id">
+						<span t-esc="o.loan_id.company_id.country_id.name" />
+					</t>
+
+				</span>
+			</div> 
+		</template>-->
+
+		<!-- <template id="custom_layout_footer">
+			<div>Footer</div>
+		</template>
+
+
+		<template id="loan_report_external_layout">
+			<div class="article">
+				<t t-call="pragtech_loan.custom_layout_header" />
+				<t t-raw="0" />
+				<t t-call="pragtech_loan.custom_layout_footer" />
+			</div>
+		</template> -->
+		
+		
+		<template id="payment_receipt_report_document">
+			<!--<t t-call="web.external_layout">-->
+			<t t-call="web.html_container">
+			<t t-call="web.internal_layout">
+			<t t-set="o" t-value="o.with_context({'lang':o.loan_id.partner_id.lang})" />
+				<div class="row">
+				<div class="col-xs-4" style="padding-left:50px;">
+					<!-- <img t-if="o.loan_id.company_id.logo" width="200px" height="100px"
+						t-att-src="'data:image/png;base64,%s' % to_text(o.loan_id.company_id.logo)" /> -->
+				</div>
+				<div class="col-xs-8" style="padding-top:10px;">
+					<h2>
+						<span>Project Finance Payment Receipt</span>
+					</h2>
+				</div>
+			</div>
+			<br/>
+			
+			<!-- <div class="row col-xs-12">
+				<span>
+					<t t-if="o.loan_id.company_id.street">
+						<span t-esc="o.loan_id.company_id.street" />
+						,
+					</t>
+					<t t-if="o.loan_id.company_id.street2">
+						<span t-esc="o.loan_id.company_id.street2" />
+						,
+					</t>
+					<t t-if="o.loan_id.company_id.city">
+						<span t-esc="o.loan_id.company_id.city" />
+						,
+					</t>
+					<t t-if="o.loan_id.company_id.state_id">
+						<span t-esc="o.loan_id.company_id.state_id.name" />
+						,
+					</t>
+					<t t-if="o.loan_id.company_id.zip">
+						<span t-esc="o.loan_id.company_id.zip" />
+						,
+					</t>
+					<t t-if="o.loan_id.company_id.country_id">
+						<span t-esc="o.loan_id.company_id.country_id.name" />
+					</t>
+
+				</span>
+			</div> -->
+
+					<!-- <t t-call="web.basic_layout"> -->
+					<t t-foreach="docs" t-as="o">
+						<div class="page">
+						<!-- style="color:#00003f" -->
+							<div id="client_detail">
+							<br/><br/>
+								<table class="table table-condensed" style="width:100%;border-bottom: 1px solid">
+									<tr style="border-right: 1px solid;border-top: 1px solid;">
+										<td
+											style="width:50%; border-style: outset;border-bottom: 0px; border-right: 0px;border-left: 0px;border-top: 0px;">
+										</td>
+										<td class="text-center" 
+											style="background:#99ccff;border-top: 1px solid;width:50%;border-bottom: 1px solid;border-right: 1px;border-left:1px solid;border-style: outset1;">
+											<strong>Printed By:</strong>
+										</td>
+									</tr>
+									<tr style="border-bottom: 1px solid;border-right: 1px solid;">
+										<td
+											style="width:50%; border-bottom: 0px; border-right: 0px;border-style: outset;border-left: 0px;border-top: 0px;">
+										</td>
+										<td class="text-center"
+											style="width:50%; border-bottom: 1px; border-right: 1px;border-left:1px solid;border-style: outset1;border-top: 1px;">
+											<span t-esc="o.loan_id.user_id.get_logged_name()" />
+										</td>
+									</tr>
+									<tr style="border-left: 1px solid;border-right: 1px solid;">
+										<td
+											style="width:50%; border-bottom: 0px; border-right: 0px;border-left: 1px solid;border-top: 1px solid;border-style: outset;">
+											<strong>
+												Client Name:</strong>
+												<span t-esc="o.loan_id.partner_id.name" />
+												<!--  <address t-field="o.loan_id.partner_id"
+                    t-options='{"widget": "contact", "fields": ["address", "name","phone"], "no_marker": True}' /> -->
+                    
+											
+										</td>
+										<td style="width:50%; border-bottom: 0px; border-right: 1px solid;border-left: 0px;border-top: 1px solid;border-style: outset;">
+											<strong>
+												Date:
+												</strong>
+												<span t-esc="o.get_max_Date()" />
+											
+										</td>
+									</tr>
+									<tr style="border-left: 1px solid;border-right: 1px solid;">
+											<td
+												style="width:50%; border-bottom: 0px; border-right: 0px;border-left: 1px solid;border-top: 0px;border-style: outset;">
+										
+												<strong>Company:</strong>
+												<span t-esc="o.loan_id.partner_id.parent_id.name" />
+												
+											</td>
+										
+										<td style="width:50%; border-bottom: 0px; border-right: 1px solid;border-left: 0px;border-top: 0px;border-style: outset;">
+											<strong>Phone:  </strong>
+											<span t-esc="o.loan_id.partner_id.phone"/>
+										</td>
+									</tr>
+									<tr style="border-left: 1px solid;border-right: 1px solid;">
+											<td
+												style="width:50%; border-bottom: 0px; border-right: 0px;border-left: 1px solid;border-top: 0px;border-style: outset;">
+										
+												<strong>TIN No.:</strong>
+												<!-- <span t-esc="o.loan_id.partner_id.company_type"/> -->
+												<t t-if="o.loan_id.partner_id.company_type=='company'">
+												<span t-esc="o.loan_id.partner_id.vat" />
+												</t>
+												
+											</td>
+										
+										<td style="width:50%; border-bottom: 0px; border-right: 1px solid;border-left: 0px;border-top: 0px;border-style: outset;">
+										</td>
+									</tr>
+								</table>
+								<table class="table table-condensed" style="width:100%;border: 1px solid;">
+									<thead>
+
+										<tr class="text-center" style="background:#dbe5f1">
+											<th style="border-right: 1px solid;">Date</th>
+											<th style="border-right: 1px solid;">Journal</th>
+											<th style="border-right: 1px solid;">Reference</th>
+											<th style="border-right: 1px solid;">Value</th>
+										</tr>
+									</thead>
+									<tbody>
+										<t t-set="data" t-value="o.get_data()" />
+										<t t-foreach="data.get('move_lines')" t-as="move_line">
+											<tr>
+												<td style="border: 1px solid;">
+												<span t-esc="env['res.lang'].date_formatter(move_line.date)"/>
+												</td>
+												
+												<td style="border: 1px solid;" t-esc="move_line.move_id.name"></td>
+												<td style="border: 1px solid;">
+												<span t-esc="move_line.ref"></span>
+												&#x20;
+												<span t-esc="move_line.account_id.code"></span>
+												<span t-esc="move_line.account_id.name"></span>
+												</td>
+
+												<td class="text-right" style="border: 1px solid;"
+													t-esc="'{0:,.2f}'.format(move_line.credit)"></td>
+											</tr>
+										</t>
+										<tr>
+											<td></td>
+											<td></td>
+											<td class="text-right" >Total :  </td>
+											<td class="text-right" style="border: 1px solid;" colspan="4">
+												<span t-esc="'{0:,.2f}'.format(data.get('sum'))"></span>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+							<!-- <div id="payment_schedule">
+								<br />
+								<span>
+									<strong>Payment Schedule</strong>
+								</span>
+								<table class="table table-condensed" style="width:100%">
+									<thead>
+										<tr class="text-center">
+											<th>Due Date</th>
+											<th>Item/Description</th>
+											<th>Amount Due</th>
+											<th>Amount Paid</th>
+											<th>Balance</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+
+										</tr>
+									</tbody>
+								</table>
+							</div> -->
+						</div>
+					</t>
+				<!-- </t> -->
+			<!-- </t> -->
+
+			<!-- <style>
+
+				thead{display: table-header-group;}
+				tfoot {display:
+				table-row-group;}
+				tr {page-break-inside: avoid;}
+
+			</style> -->
+			<!-- </t> -->
+			</t>
+			</t>
+
+		</template>
+
+		<template id="payment_receipt_report">
+			<!-- <t t-call="web.basic_layout"> -->
+				
+				<t t-foreach="docs" t-as="o">
+					<t t-call="pragtech_loan_advance.payment_receipt_report_document" t-lang="o.loan_id.partner_id.lang"/>
+				</t>
+			<!-- </t> -->
+		</template>
+</odoo>
+    

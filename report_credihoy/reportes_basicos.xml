@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <record id="pragtech_loan_advance.action_credito_amortiza_cs_pf_sin_aval_order" model="ir.actions.report">
+    <field name="name">Tabla Amortización</field>
+    <field name="type">ir.actions.report</field>
+    <field name="model">account.loan</field>
+    <field name="report_name">credito_amortiza_cs_pf_sin_aval_report_py3o</field>
+    <field name="report_type">py3o</field>
+    <field name="py3o_filetype">pdf</field>
+    <field name="module">pragtech_loan_advance</field>
+    <field name="py3o_template_fallback">report/cs_pf_sin_aval_amortiza.odt</field>
+    <field name="binding_model_id" ref="pragtech_loan_advance.model_account_loan" />
+    <field name="binding_type">report</field>
+  </record>
+
+  <record id="pragtech_loan_advance.action_credito_contrato_cs_pf_sin_aval_order" model="ir.actions.report">
+    <field name="name">Contrato Crédito</field>
+    <field name="type">ir.actions.report</field>
+    <field name="model">account.loan</field>
+    <field name="report_name">credito_contrato_cs_pf_sin_aval_report_py3o</field>
+    <field name="report_type">py3o</field>
+    <field name="py3o_filetype">pdf</field>
+    <field name="module">pragtech_loan_advance</field>
+    <field name="py3o_template_fallback">report/cs_pf_sin_aval_contrato.odt</field>
+    <field name="binding_model_id" ref="pragtech_loan_advance.model_account_loan" />
+    <field name="binding_type">report</field>
+  </record>
+
+  <record id="pragtech_loan_advance.action_credito_quote_cs_pf_sin_aval_order" model="ir.actions.report">
+    <field name="name">Cotización Crédito</field>
+    <field name="type">ir.actions.report</field>
+    <field name="model">account.loan</field>
+    <field name="report_name">credito_quote_cs_pf_sin_aval_report_py3o</field>
+    <field name="report_type">py3o</field>
+    <field name="py3o_filetype">pdf</field>
+    <field name="module">pragtech_loan_advance</field>
+    <field name="py3o_template_fallback">report/cs_pf_sin_aval_quote.odt</field>
+    <field name="binding_model_id" ref="pragtech_loan_advance.model_account_loan" />
+    <field name="binding_type">report</field>
+  </record>
+
+  <record id="pragtech_loan_advance.action_credito_buro_cs_pf_sin_aval_order" model="ir.actions.report">
+    <field name="name">Buró Crédito</field>
+    <field name="type">ir.actions.report</field>
+    <field name="model">account.loan</field>
+    <field name="report_name">credito_buro_cs_pf_sin_aval_report_py3o</field>
+    <field name="report_type">py3o</field>
+    <field name="py3o_filetype">pdf</field>
+    <field name="module">pragtech_loan_advance</field>
+    <field name="py3o_template_fallback">report/cs_pf_sin_aval_buro.odt</field>
+    <field name="binding_model_id" ref="pragtech_loan_advance.model_account_loan" />
+    <field name="binding_type">report</field>
+  </record>
+
+  <record id="pragtech_loan_advance.action_credito_caratula_cs_pf_sin_aval_order" model="ir.actions.report">
+    <field name="name">Carátula de Contrato</field>
+    <field name="type">ir.actions.report</field>
+    <field name="model">account.loan</field>
+    <field name="report_name">credito_caratula_cs_pf_sin_aval_report_py3o</field>
+    <field name="report_type">py3o</field>
+    <field name="py3o_filetype">pdf</field>
+    <field name="module">pragtech_loan_advance</field>
+    <field name="py3o_template_fallback">report/cs_pf_sin_aval_caratula.odt</field>
+    <field name="binding_model_id" ref="pragtech_loan_advance.model_account_loan" />
+    <field name="binding_type">report</field>
+  </record>
+
+  <record id="pragtech_loan_advance.action_credito_pagare_cs_pf_sin_aval_order" model="ir.actions.report">
+    <field name="name">Pagaré Simple</field>
+    <field name="type">ir.actions.report</field>
+    <field name="model">account.loan</field>
+    <field name="report_name">credito_pagare_cs_pf_sin_aval_report_py3o</field>
+    <field name="report_type">py3o</field>
+    <field name="py3o_filetype">pdf</field>
+    <field name="module">pragtech_loan_advance</field>
+    <field name="py3o_template_fallback">report/cs_pf_sin_aval_pagare.odt</field>
+    <field name="binding_model_id" ref="pragtech_loan_advance.model_account_loan" />
+    <field name="binding_type">report</field>
+  </record>
+
+
+</odoo>

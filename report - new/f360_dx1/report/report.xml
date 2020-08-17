@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<!--
+10  -> Dexone
+-->
+
+
+<!--
+***** DEXONE *****
+-->
+
+<record id="f360_dx1.action_report_loan_anexo_a_rel_cli_order" model="ir.actions.report">
+  <field name="name">Anexo A: Relación de clientes y deudores</field>
+  <field name="type">ir.actions.report</field>
+  <field name="model">account.loan</field>
+  <field name="report_name">loan_anexo_a_rel_cli_report_py3o</field>
+  <field name="report_type">py3o</field>
+  <field name="py3o_filetype">pdf</field>
+  <field name="module">f360_dx1</field>
+  <field name="py3o_template_fallback">report/10_anexo_a_relacion_clientes_deudores.odt</field>
+  <field name="binding_model_id" ref="pragtech_loan_advance.model_account_loan" />
+  <field name="binding_type">report</field>
+</record>
+
+<record id="f360_dx1.action_report_loan_anexo_b_ces_der_order" model="ir.actions.report">
+  <field name="name">Anexo B: Cesión de Derechos</field>
+  <field name="type">ir.actions.report</field>
+  <field name="model">account.loan</field>
+  <field name="report_name">loan_anexo_b_ces_der_report_py3o</field>
+  <field name="report_type">py3o</field>
+  <field name="py3o_filetype">pdf</field>
+  <field name="module">f360_dx1</field>
+  <field name="py3o_template_fallback">report/10_anexo_b_cesion_derechos.odt</field>
+  <field name="binding_model_id" ref="pragtech_loan_advance.model_account_loan" />
+  <field name="binding_type">report</field>
+</record>
+
+<record id="f360_dx1.action_report_loan_anexo_b_car_order" model="ir.actions.report">
+  <field name="name">Anexo C: Carátula</field>
+  <field name="type">ir.actions.report</field>
+  <field name="model">account.loan</field>
+  <field name="report_name">loan_anexo_c_car_report_py3o</field>
+  <field name="report_type">py3o</field>
+  <field name="py3o_filetype">pdf</field>
+  <field name="module">f360_dx1</field>
+  <field name="py3o_template_fallback">report/10_anexo_c_caratula.odt</field>
+  <field name="binding_model_id" ref="pragtech_loan_advance.model_account_loan" />
+  <field name="binding_type">report</field>
+</record>
+
+<record id="f360_dx1.action_report_loan_anexo_d_pag_order" model="ir.actions.report">
+  <field name="name">Anexo D: Pagaré</field>
+  <field name="type">ir.actions.report</field>
+  <field name="model">account.loan</field>
+  <field name="report_name">loan_anexo_d_pag_report_py3o</field>
+  <field name="report_type">py3o</field>
+  <field name="py3o_filetype">pdf</field>
+  <field name="module">f360_dx1</field>
+  <field name="py3o_template_fallback">report/10_anexo_d_pagaré.odt</field>
+  <field name="binding_model_id" ref="pragtech_loan_advance.model_account_loan" />
+  <field name="binding_type">report</field>
+</record>
+
+<record id="f360_dx1.action_report_loan_anexo_e_dis_order" model="ir.actions.report">
+  <field name="name">Anexo E: Disposiciones</field>
+  <field name="type">ir.actions.report</field>
+  <field name="model">account.loan</field>
+  <field name="report_name">loan_anexo_e_dis_report_py3o</field>
+  <field name="report_type">py3o</field>
+  <field name="py3o_filetype">pdf</field>
+  <field name="module">f360_dx1</field>
+  <field name="py3o_template_fallback">report/10_anexo_e_disposiciones_legales.odt</field>
+  <field name="binding_model_id" ref="pragtech_loan_advance.model_account_loan" />
+  <field name="binding_type">report</field>
+</record>
+
+<record id="f360_dx1.action_report_loan_contrato_fac_fin_order" model="ir.actions.report">
+  <field name="name">Contrato de Factoraje Financiero</field>
+  <field name="type">ir.actions.report</field>
+  <field name="model">account.loan</field>
+  <field name="report_name">loan_contrato_fac_fin_dis_report_py3o</field>
+  <field name="report_type">py3o</field>
+  <field name="py3o_filetype">pdf</field>
+  <field name="module">f360_dx1</field>
+  <field name="py3o_template_fallback">report/10_contrato_factoraje_financiero.odt</field>
+  <field name="binding_model_id" ref="pragtech_loan_advance.model_account_loan" />
+  <field name="binding_type">report</field>
+</record>
+
+</odoo>

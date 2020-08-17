@@ -1,0 +1,14 @@
+<odoo>
+	<data>
+		<record id="loan_report_all" model="ir.actions.act_window">
+			<field name="name">Loan Analysis</field>
+			<field name="res_model">account.loan.report</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">pivot</field>
+			<field name="view_id"></field>  <!-- force empty -->
+			<field name="help">This report performs analysis on your Loan Details.</field>
+		</record>
+
+	</data>
+</odoo>
+

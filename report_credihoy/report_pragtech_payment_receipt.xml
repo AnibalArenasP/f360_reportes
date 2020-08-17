@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<template id="report_pragtech_payment_receipt">
+		<!-- <t t-call="web.html_container"> -->
+		<t t-call="web.basic_layout">
+			<t t-foreach="docs" t-as="o">
+				<div class="page">
+					<div class="row">
+						<div class="col-xs-4">
+							<img t-if="o.company_id.logo" style="width: 100%;" alt="Image"
+								t-att-src="'data:image/png;base64,%s' % to_text(o.company_id.logo)" />
+						</div>
+						<div class="col-xs-8">
+							<h2>
+								<span>Project Finance Payment Receipt</span>
+							</h2>
+						</div>
+					</div>
+
+					<div class="row col-xs-12">
+						<span>
+							<t t-if="o.company_id.street">
+								<span t-esc="o.company_id.street" />
+								,
+							</t>
+							<t t-if="o.company_id.street2">
+								<span t-esc="o.company_id.street2" />
+								,
+							</t>
+							<t t-if="o.company_id.city">
+								<span t-esc="o.company_id.city" />
+								,
+							</t>
+							<t t-if="o.company_id.state_id">
+								<span t-esc="o.company_id.state_id.name" />
+								,
+							</t>
+							<t t-if="o.company_id.zip">
+								<span t-esc="o.company_id.zip" />
+								,
+							</t>
+							<t t-if="o.company_id.country_id">
+								<span t-esc="o.company_id.country_id.name" />
+							</t>
+
+						</span>
+					</div>
+
+					<div id="client_detail">
+						<table class="table table-condensed" style="width:80%">
+							<tr>
+								<td
+									style="width:50%; border-style: outset;border-bottom: 0px; border-right: 0px;border-left: 0px;border-top: 0px;">
+								</td>
+								<td class="text-center"
+									style="width:50%;border-bottom: 1px;border-right: 1px;border-left: 1px;border-style: outset;">
+									<strong>Printed By:</strong>
+								</td>
+							</tr>
+							<tr>
+								<td
+									style="width:50%; border-bottom: 0px; border-right: 0px;border-style: outset;border-left: 0px;border-top: 0px;">
+								</td>
+								<td class="text-center"
+									style="width:50%; border-bottom: 1px; border-right: 1px;border-left: 1px;border-style: outset;border-top: 1px;">
+									<span t-esc="o.user_id.get_logged_name()" />
+								</td>
+							</tr>
+							<tr>
+								<td
+									style="width:50%; border-bottom: 0px; border-right: 0px;border-left: 1px;border-top: 1px;border-style: outset;">
+									<span>
+										Client Name:
+										<span t-esc="o.partner_id.name" />
+									</span>
+								</td>
+								<td
+									style="width:50%; border-bottom: 0px; border-right: 1px;border-left: 0px;border-top: 1px;border-style: outset;">
+									<span>
+										Date:
+										<span t-field="o.approve_date" />
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<td
+									style="width:50%; border-bottom: 0px; border-right: 0px;border-left: 1px;border-top: 0px;border-style: outset;">
+									<span>
+										Company:
+										<span t-esc="o.company_id.name" />
+									</span>
+								</td>
+								<td
+									style="width:50%; border-bottom: 0px; border-right: 1px;border-left: 0px;border-top: 0px;border-style: outset;">
+									<span>Phone:  </span>
+								</td>
+							</tr>
+							<tr>
+								<td
+									style="width:50%; border-bottom: 1px; border-right: 0px;border-left: 1px;border-top: 0px;border-style: outset;">
+								</td>
+								<td
+									style="width:50%; border-bottom: 1px; border-right: 1px;border-left: 0px;border-top: 0px;border-style: outset;">
+								</td>
+							</tr>
+						</table>
+					</div>
+					
+					<div id="payment_schedule">
+						<br/>
+						<span><strong>Payment Schedule</strong></span>
+						<table class="table table-condensed" style="width:100%">
+							<thead>
+								<tr class="text-center">
+									<th>Due Date</th>
+									<th>Item/Description</th>
+									<th>Amount Due</th>
+									<th>Amount Paid</th>
+									<th>Balance</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</t>
+
+			<style>
+
+				thead{display: table-header-group;}
+				tfoot {display:
+				table-row-group;}
+				tr {page-break-inside: avoid;}
+
+			</style>
+		</t>
+		<!-- </t> -->
+
+	</template>
+</odoo>
+    

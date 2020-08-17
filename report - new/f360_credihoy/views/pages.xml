@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+  <!-- === Services Page === -->
+  <record id="services_page" model="website.page">
+      <field name="name">Services page</field>
+      <field name="website_published">True</field>
+      <field name="url">/services</field>
+      <field name="type">qweb</field>
+      <field name="key">theme_tutorial.services_page</field>
+      <field name="arch" type="xml">
+          <t t-name="theme_tutorial.services_page_template">
+            <t t-call="website.layout">
+              <div id="wrap">
+
+                <div class="container">
+                  <section class="html_form">
+                    <div class="container mt16 mb16">
+                      <h2 style="text-align: center; font-family: Righteous; font-size: 50px;">Simulador de crédito Apoyo Express </h2>
+                      <form action="/website_form/" method="post" data-model_name="crm.lead" data-success_page="/contactus-thank-you" class="s_website_form container-fluid mt32" enctype="multipart/form-data" data-editable-form="false">
+                        <div class="form-group row form-field o_website_form_required_custom" style="font-family: Righteous; font-size: 20px; color: #202755;">
+                            <label class="col-lg-3 col-md-4 col-form-label" for="contact_name">Nombre Completo</label>
+                            <div class="col-lg-7 col-md-8">
+                                <input type="text" class="form-control o_website_form_input" name="contact_name" t-att-value="request.params.get('contact_name', '')" required=""/>
+                            </div>
+                        </div>
+                        <div class="form-group row form-field"  style="font-family: Righteous; font-size: 20px; color: #202755;">
+                            <label class="col-lg-3 col-md-4 col-form-label" for="phone">Teléfono</label>
+                            <div class="col-lg-7 col-md-8">
+                                <input type="text" class="form-control o_website_form_input" name="phone" t-att-value="request.params.get('phone', '')"/>
+                            </div>
+                        </div>
+                        <div class="form-group row form-field o_website_form_required_custom"  style="font-family: Righteous; font-size: 20px; color: #202755;">
+                            <label class="col-lg-3 col-md-4 col-form-label" for="email_from">Email</label>
+                            <div class="col-lg-7 col-md-8">
+                                <input type="text" class="form-control o_website_form_input" name="email_from" required="" t-att-value="request.params.get('email_from', '')"/>
+                            </div>
+                        </div>
+                        <div class="form-group row form-field o_website_form_required_custom"  style="font-family: Righteous; font-size: 20px; color: #202755;">
+                            <label class="col-lg-3 col-md-4 col-form-label" for="monto_solicitado">Monto Solicitado</label>
+                            <div class="col-lg-7 col-md-8">
+                                <input type="range" min="1000" max="20000" value="1" id="myRange" class="slider" step="1000" name="monto_solicitado" t-att-value="request.params.get('monto_solicitado', '')" onchange="computeLoan()"/>
+                                <div class="total">Total: $<span id="value"></span>.00</div>
+                            </div>
+                        </div>
+                        <div class="form-group row form-field o_website_form_required_custom"  style="font-family: Righteous; font-size: 20px; color: #202755;">
+                            <label class="col-lg-3 col-md-4 col-form-label" for="periodo_meses">Periodo en meses</label>
+                            <div class="col-lg-7 col-md-8">
+                                <input type="range" min="1" max="6" value="1" id="myRange2" class="slider2" step="1" name="periodo_meses" t-att-value="request.params.get('periodo_meses', '')" onchange="computeLoan()"/><br/>
+                                <div class="total">Meses: <span id="value2"></span></div>
+                            </div>
+                        </div>
+                        <div class="form-group row form-field o_website_form_required_custom"  style="font-family: Righteous; font-size: 20px; color: #202755;">
+                            <label class="col-lg-3 col-md-4 col-form-label">Tasa de Interés Mensual</label>
+                            <div class="col-lg-7 col-md-8">
+                              <input id="interest_rate" type="hidden" value="23" class="interest" readonly="true"/>
+                              <div class="result">7.5%</div>
+                            </div>
+                        </div>
+                        <div class="form-group row form-field o_website_form_required_custom"  style="font-family: Righteous; font-size: 20px; color: #202755;">
+                          <label class="col-lg-3 col-md-4 col-form-label">Pago Mensual</label>
+                          <div class="col-lg-7 col-md-8">
+                            <div class="result">
+                              <p id="payment" name="pago_mensual" t-att-value="request.params.get('pago_mensual', '')"/>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group row form-field o_website_form_required"  style="font-family: Righteous; font-size: 20px; color: #202755;">
+                            <label class="col-lg-3 col-md-4 col-form-label" for="name">Asunto</label>
+                            <div class="col-lg-7 col-md-8">
+                                <input type="text" class="form-control o_website_form_input" name="name" required="" t-att-value="request.params.get('name', '')"/>
+                            </div>
+                        </div>
+                        <div class="form-group row form-field o_website_form_required_custom"  style="font-family: Righteous; font-size: 20px; color: #202755;">
+                            <label class="col-lg-3 col-md-4 col-form-label" for="description">Mensaje</label>
+                            <div class="col-lg-7 col-md-8">
+                                <textarea class="form-control o_website_form_input" name="description" required=""><t t-esc="request.params.get('description', '')"/></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="offset-lg-3 offset-md-4 col-md-8 col-lg-7"  style="font-family: Righteous; font-size: 20px; color: #202755;">
+                                <a href="#" role="button" class="btn btn-primary btn-lg o_website_form_send">Enviar</a>
+                                <span id="o_website_form_result"/>
+                            </div>
+                        </div>
+                        <h2 style="text-align: center; font-family: Righteous; font-size: 25px; margin-top: 50px;">NOTA: La información mostrada relacionada a los montos de pago son solo informativos y estan sujetos al cambio de acuerdo a la cotización de forma presencial. Si necesitas otros montos, plazos de crédito y otros productos por este medio y a la brevedad un ejecutivo te atenderá</h2>
+                        <script type="text/javascript">
+                          var slider = document.getElementById("myRange");
+                          var output = document.getElementById("value");
+
+                          output.innerHTML = slider.value;
+
+                          slider.oninput = function(){
+                              output.innerHTML = this.value;
+                          }
+
+                          slider.addEventListener("mousemove", function(){
+                            var x = slider.value;
+                            var color = 'linear-gradient(90deg, rgb(117,252,117)' + x + '%, rgb(214,314,214)' + x + '%)';
+                            slider.style.background = color;
+                          })
+
+                          var sliderz = document.getElementById("myRange2");
+                          var outputz = document.getElementById("value2");
+
+                          outputz.innerHTML = sliderz.value;
+
+                          sliderz.oninput = function(){
+                              outputz.innerHTML = this.value;
+                          }
+
+                          sliderz.addEventListener("mousemove", function(){
+                            var x = sliderz.value;
+                            var color = 'linear-gradient(90deg, rgb(117,252,117)' + x + '%, rgb(214,314,214)' + x + '%)';
+                            sliderz.style.background = color;
+                          })
+
+                          function computeLoan(){
+                            var amount = document.getElementById('myRange').value;
+                            var months = document.getElementById('myRange2').value;
+                            var interest = (2.2233333) * .01;
+                            var expo = Math.pow(1+interest, -months);
+                            var reducido = amount*(interest/(1-expo));
+                            var payment = reducido.toFixed(2);
+                            payment = payment.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                            document.getElementById('payment').innerHTML = " $ " + payment;
+
+                            return payment;
+                          }
+                        </script>
+                      </form>
+                    </div>
+                  </section>
+
+                </div>
+
+                  <!-- === Snippets' area === -->
+                  <div class="oe_structure" />
+
+              </div>
+            </t>
+          </t>
+      </field>
+  </record>
+
+  <record id="services_page_link" model="website.menu">
+    <field name="name">Solicita</field>
+    <field name="page_id" ref="services_page"/>
+    <field name="parent_id" ref="website.main_menu" />
+    <field name="sequence" type="int">99</field>
+  </record>
+
+ </odoo>

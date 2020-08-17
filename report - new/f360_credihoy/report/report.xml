@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<!--
+
+7-8 -> Credihoy
+
+-->
+
+<!--
+***** CREDIHOY *****
+-->
+
+<record id="f360_credihoy.action_report_loan_cs_pf_anexo_a_order" model="ir.actions.report">
+  <field name="name">Crédito Simple PF - Anexo A</field>
+  <field name="type">ir.actions.report</field>
+  <field name="model">account.loan</field>
+  <field name="report_name">loan_pagare_cs_pf_anexo_a_report_py3o</field>
+  <field name="report_type">py3o</field>
+  <field name="py3o_filetype">pdf</field>
+  <field name="module">f360_credihoy</field>
+  <field name="py3o_template_fallback">report/7_credito_simple_pf_anexo_a.odt</field>
+  <field name="binding_model_id" ref="pragtech_loan_advance.model_account_loan" />
+  <field name="binding_type">report</field>
+</record>
+
+<record id="f360_credihoy.action_report_loan_cs_pf_anexo_b_order" model="ir.actions.report">
+  <field name="name">Crédito Simple PF - Anexo B</field>
+  <field name="type">ir.actions.report</field>
+  <field name="model">account.loan</field>
+  <field name="report_name">loan_pagare_cs_pf_anexo_b_report_py3o</field>
+  <field name="report_type">py3o</field>
+  <field name="py3o_filetype">pdf</field>
+  <field name="module">f360_credihoy</field>
+  <field name="py3o_template_fallback">report/7_credito_simple_pf_anexo_b.odt</field>
+  <field name="binding_model_id" ref="pragtech_loan_advance.model_account_loan" />
+  <field name="binding_type">report</field>
+</record>
+
+<record id="f360_credihoy.action_report_loan_cs_pf_anexo_c_order" model="ir.actions.report">
+  <field name="name">Crédito Simple PF - Anexo C</field>
+  <field name="type">ir.actions.report</field>
+  <field name="model">account.loan</field>
+  <field name="report_name">loan_pagare_cs_pf_anexo_c_report_py3o</field>
+  <field name="report_type">py3o</field>
+  <field name="py3o_filetype">pdf</field>
+  <field name="module">f360_credihoy</field>
+  <field name="py3o_template_fallback">report/7_credito_simple_pf_anexo_c.odt</field>
+  <field name="binding_model_id" ref="pragtech_loan_advance.model_account_loan" />
+  <field name="binding_type">report</field>
+</record>
+
+<record id="f360_credihoy.action_report_loan_cs_pf_anexo_d_order" model="ir.actions.report">
+  <field name="name">Crédito Simple PF - Anexo D</field>
+  <field name="type">ir.actions.report</field>
+  <field name="model">account.loan</field>
+  <field name="report_name">loan_pagare_cs_pf_anexo_d_report_py3o</field>
+  <field name="report_type">py3o</field>
+  <field name="py3o_filetype">pdf</field>
+  <field name="module">f360_credihoy</field>
+  <field name="py3o_template_fallback">report/7_credito_simple_pf_anexo_d.odt</field>
+  <field name="binding_model_id" ref="pragtech_loan_advance.model_account_loan" />
+  <field name="binding_type">report</field>
+</record>
+
+<record id="f360_credihoy.action_report_loan_cs_pf_contrato_order" model="ir.actions.report">
+  <field name="name">Crédito Simple PF - Contrato</field>
+  <field name="type">ir.actions.report</field>
+  <field name="model">account.loan</field>
+  <field name="report_name">loan_pagare_cs_pf_contrato_report_py3o</field>
+  <field name="report_type">py3o</field>
+  <field name="py3o_filetype">pdf</field>
+  <field name="module">f360_credihoy</field>
+  <field name="py3o_template_fallback">report/7_credito_simple_pf_contrato.odt</field>
+  <field name="binding_model_id" ref="pragtech_loan_advance.model_account_loan" />
+  <field name="binding_type">report</field>
+</record>
+
+<record id="f360_credihoy.action_report_loan_cs_pyme_anexo_a_order" model="ir.actions.report">
+  <field name="name">Crédito Simple PYME - Anexo A</field>
+  <field name="type">ir.actions.report</field>
+  <field name="model">account.loan</field>
+  <field name="report_name">loan_pagare_cs_pyme_anexo_a_report_py3o</field>
+  <field name="report_type">py3o</field>
+  <field name="py3o_filetype">pdf</field>
+  <field name="module">f360_credihoy</field>
+  <field name="py3o_template_fallback">report/8_credito_simple_pyme_anexo_a.odt</field>
+  <field name="binding_model_id" ref="pragtech_loan_advance.model_account_loan" />
+  <field name="binding_type">report</field>
+</record>
+
+<record id="f360_credihoy.action_report_loan_cs_pyme_anexo_b_order" model="ir.actions.report">
+  <field name="name">Crédito Simple PYME - Anexo B</field>
+  <field name="type">ir.actions.report</field>
+  <field name="model">account.loan</field>
+  <field name="report_name">loan_pagare_cs_pyme_anexo_b_report_py3o</field>
+  <field name="report_type">py3o</field>
+  <field name="py3o_filetype">pdf</field>
+  <field name="module">f360_credihoy</field>
+  <field name="py3o_template_fallback">report/8_credito_simple_pyme_anexo_b.odt</field>
+  <field name="binding_model_id" ref="pragtech_loan_advance.model_account_loan" />
+  <field name="binding_type">report</field>
+</record>
+
+<record id="f360_credihoy.action_report_loan_cs_pyme_anexo_c_order" model="ir.actions.report">
+  <field name="name">Crédito Simple PYME - Anexo C</field>
+  <field name="type">ir.actions.report</field>
+  <field name="model">account.loan</field>
+  <field name="report_name">loan_pagare_cs_pyme_anexo_c_report_py3o</field>
+  <field name="report_type">py3o</field>
+  <field name="py3o_filetype">pdf</field>
+  <field name="module">f360_credihoy</field>
+  <field name="py3o_template_fallback">report/8_credito_simple_pyme_anexo_c.odt</field>
+  <field name="binding_model_id" ref="pragtech_loan_advance.model_account_loan" />
+  <field name="binding_type">report</field>
+</record>
+
+<record id="f360_credihoy.action_report_loan_cs_pyme_anexo_d_order" model="ir.actions.report">
+  <field name="name">Crédito Simple PYME - Anexo D</field>
+  <field name="type">ir.actions.report</field>
+  <field name="model">account.loan</field>
+  <field name="report_name">loan_pagare_cs_pyme_anexo_d_report_py3o</field>
+  <field name="report_type">py3o</field>
+  <field name="py3o_filetype">pdf</field>
+  <field name="module">f360_credihoy</field>
+  <field name="py3o_template_fallback">report/8_credito_simple_pyme_anexo_d.odt</field>
+  <field name="binding_model_id" ref="pragtech_loan_advance.model_account_loan" />
+  <field name="binding_type">report</field>
+</record>
+
+<record id="f360_credihoy.action_report_loan_cs_pyme_contrato_order" model="ir.actions.report">
+  <field name="name">Crédito Simple PYME - Contrato</field>
+  <field name="type">ir.actions.report</field>
+  <field name="model">account.loan</field>
+  <field name="report_name">loan_pagare_cs_pyme_contrato_report_py3o</field>
+  <field name="report_type">py3o</field>
+  <field name="py3o_filetype">pdf</field>
+  <field name="module">f360_credihoy</field>
+  <field name="py3o_template_fallback">report/8_credito_simple_pyme_contrato.odt</field>
+  <field name="binding_model_id" ref="pragtech_loan_advance.model_account_loan" />
+  <field name="binding_type">report</field>
+</record>
+
+</odoo>

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<!--
+
+9   -> Agrofin
+
+-->
+
+<!--
+***** AGROFIN *****
+-->
+
+<record id="f360_agrofin.action_report_loan_anexo_1_caratula_order" model="ir.actions.report">
+  <field name="name">Anexo 1: Carátula</field>
+  <field name="type">ir.actions.report</field>
+  <field name="model">account.loan</field>
+  <field name="report_name">loan_anexo_1_caratula_report_py3o</field>
+  <field name="report_type">py3o</field>
+  <field name="py3o_filetype">pdf</field>
+  <field name="module">f360_agrofin</field>
+  <field name="py3o_template_fallback">report/9_anexo_1_caratula.odt</field>
+  <field name="binding_model_id" ref="pragtech_loan_advance.model_account_loan" />
+  <field name="binding_type">report</field>
+</record>
+
+<record id="f360_agrofin.action_report_loan_anexo_2_datos_generales_pf_order" model="ir.actions.report">
+  <field name="name">Anexo 2: Datos Generales PF</field>
+  <field name="type">ir.actions.report</field>
+  <field name="model">account.loan</field>
+  <field name="report_name">loan_anexo_2_datos_generales_pf_report_py3o</field>
+  <field name="report_type">py3o</field>
+  <field name="py3o_filetype">pdf</field>
+  <field name="module">f360_agrofin</field>
+  <field name="py3o_template_fallback">report/9_anexo_2_datos_generales_pf.odt</field>
+  <field name="binding_model_id" ref="pragtech_loan_advance.model_account_loan" />
+  <field name="binding_type">report</field>
+</record>
+
+<record id="f360_agrofin.action_report_loan_anexo_2_datos_generales_pm_order" model="ir.actions.report">
+  <field name="name">Anexo 2: Datos Generales PM</field>
+  <field name="type">ir.actions.report</field>
+  <field name="model">account.loan</field>
+  <field name="report_name">loan_anexo_2_datos_generales_pm_report_py3o</field>
+  <field name="report_type">py3o</field>
+  <field name="py3o_filetype">pdf</field>
+  <field name="module">f360_agrofin</field>
+  <field name="py3o_template_fallback">report/9_anexo_2_datos_generales_pm.odt</field>
+  <field name="binding_model_id" ref="pragtech_loan_advance.model_account_loan" />
+  <field name="binding_type">report</field>
+</record>
+
+<record id="f360_agrofin.action_report_loan_anexo_3_datos_conceptos_inversion_order" model="ir.actions.report">
+  <field name="name">Anexo 3: Conceptos de Inversión</field>
+  <field name="type">ir.actions.report</field>
+  <field name="model">account.loan</field>
+  <field name="report_name">loan_anexo_3_datos_conceptos_inversion_report_py3o</field>
+  <field name="report_type">py3o</field>
+  <field name="py3o_filetype">pdf</field>
+  <field name="module">f360_agrofin</field>
+  <field name="py3o_template_fallback">report/9_anexo_3_datos_conceptos_inversion.odt</field>
+  <field name="binding_model_id" ref="pragtech_loan_advance.model_account_loan" />
+  <field name="binding_type">report</field>
+</record>
+
+<record id="f360_agrofin.action_report_loan_anexo_4_garantia_prendaria_order" model="ir.actions.report">
+  <field name="name">Anexo 4: Garantía Prendaria</field>
+  <field name="type">ir.actions.report</field>
+  <field name="model">account.loan</field>
+  <field name="report_name">loan_anexo_4_garantia_prendaria_report_py3o</field>
+  <field name="report_type">py3o</field>
+  <field name="py3o_filetype">pdf</field>
+  <field name="module">f360_agrofin</field>
+  <field name="py3o_template_fallback">report/9_anexo_4_garantia_prendaria.odt</field>
+  <field name="binding_model_id" ref="pragtech_loan_advance.model_account_loan" />
+  <field name="binding_type">report</field>
+</record>
+
+<record id="f360_agrofin.action_report_loan_anexo_5_transcripcion_articulos_order" model="ir.actions.report">
+  <field name="name">Anexo 5: Transcripción de Artículos Prendaria</field>
+  <field name="type">ir.actions.report</field>
+  <field name="model">account.loan</field>
+  <field name="report_name">loan_anexo_5_transcripcion_articulos_report_py3o</field>
+  <field name="report_type">py3o</field>
+  <field name="py3o_filetype">pdf</field>
+  <field name="module">f360_agrofin</field>
+  <field name="py3o_template_fallback">report/9_anexo_5_transcripcion_articulos.odt</field>
+  <field name="binding_model_id" ref="pragtech_loan_advance.model_account_loan" />
+  <field name="binding_type">report</field>
+</record>
+
+<record id="f360_agrofin.action_report_loan_fnd_contrato_cuenta_corriente_pf_gh_order" model="ir.actions.report">
+  <field name="name">Contrato de Crédito: Cuenta Corriente PF GH</field>
+  <field name="type">ir.actions.report</field>
+  <field name="model">account.loan</field>
+  <field name="report_name">loan_fnd_contrato_cuenta_corriente_pf_gh_report_py3o</field>
+  <field name="report_type">py3o</field>
+  <field name="py3o_filetype">pdf</field>
+  <field name="module">f360_agrofin</field>
+  <field name="py3o_template_fallback">report/9_fnd_contrato_cuenta_corriente_pf_gh.odt</field>
+  <field name="binding_model_id" ref="pragtech_loan_advance.model_account_loan" />
+  <field name="binding_type">report</field>
+</record>
+
+<record id="f360_agrofin.action_report_loan_fnd_contrato_cuenta_corriente_pf_gp_order" model="ir.actions.report">
+  <field name="name">Contrato de Crédito: Cuenta Corriente PF GP</field>
+  <field name="type">ir.actions.report</field>
+  <field name="model">account.loan</field>
+  <field name="report_name">loan_fnd_contrato_cuenta_corriente_pf_gp_report_py3o</field>
+  <field name="report_type">py3o</field>
+  <field name="py3o_filetype">pdf</field>
+  <field name="module">f360_agrofin</field>
+  <field name="py3o_template_fallback">report/9_fnd_contrato_cuenta_corriente_pf_gp.odt</field>
+  <field name="binding_model_id" ref="pragtech_loan_advance.model_account_loan" />
+  <field name="binding_type">report</field>
+</record>
+
+<record id="f360_agrofin.action_report_loan_fnd_contrato_cuenta_corriente_pf_os_order" model="ir.actions.report">
+  <field name="name">Contrato de Crédito: Cuenta Corriente PF OS</field>
+  <field name="type">ir.actions.report</field>
+  <field name="model">account.loan</field>
+  <field name="report_name">loan_fnd_contrato_cuenta_corriente_pf_os_report_py3o</field>
+  <field name="report_type">py3o</field>
+  <field name="py3o_filetype">pdf</field>
+  <field name="module">f360_agrofin</field>
+  <field name="py3o_template_fallback">report/9_fnd_contrato_cuenta_corriente_pf_os.odt</field>
+  <field name="binding_model_id" ref="pragtech_loan_advance.model_account_loan" />
+  <field name="binding_type">report</field>
+</record>
+
+<record id="f360_agrofin.action_report_loan_fnd_contrato_cuenta_corriente_pm_gh_order" model="ir.actions.report">
+  <field name="name">Contrato de Crédito: Cuenta Corriente PM GH</field>
+  <field name="type">ir.actions.report</field>
+  <field name="model">account.loan</field>
+  <field name="report_name">loan_fnd_contrato_cuenta_corriente_pm_gh_report_py3o</field>
+  <field name="report_type">py3o</field>
+  <field name="py3o_filetype">pdf</field>
+  <field name="module">f360_agrofin</field>
+  <field name="py3o_template_fallback">report/9_fnd_contrato_cuenta_corriente_pm_gh.odt</field>
+  <field name="binding_model_id" ref="pragtech_loan_advance.model_account_loan" />
+  <field name="binding_type">report</field>
+</record>
+
+<record id="f360_agrofin.action_report_loan_fnd_contrato_cuenta_corriente_pm_gp_order" model="ir.actions.report">
+  <field name="name">Contrato de Crédito: Cuenta Corriente PM GP</field>
+  <field name="type">ir.actions.report</field>
+  <field name="model">account.loan</field>
+  <field name="report_name">loan_fnd_contrato_cuenta_corriente_pm_gp_report_py3o</field>
+  <field name="report_type">py3o</field>
+  <field name="py3o_filetype">pdf</field>
+  <field name="module">f360_agrofin</field>
+  <field name="py3o_template_fallback">report/9_fnd_contrato_cuenta_corriente_pm_gp.odt</field>
+  <field name="binding_model_id" ref="pragtech_loan_advance.model_account_loan" />
+  <field name="binding_type">report</field>
+</record>
+
+<record id="f360_agrofin.action_report_loan_fnd_contrato_cuenta_corriente_pm_os_order" model="ir.actions.report">
+  <field name="name">Contrato de Crédito: Cuenta Corriente PM OS</field>
+  <field name="type">ir.actions.report</field>
+  <field name="model">account.loan</field>
+  <field name="report_name">loan_fnd_contrato_cuenta_corriente_pm_os_report_py3o</field>
+  <field name="report_type">py3o</field>
+  <field name="py3o_filetype">pdf</field>
+  <field name="module">f360_agrofin</field>
+  <field name="py3o_template_fallback">report/9_fnd_contrato_cuenta_corriente_pm_os.odt</field>
+  <field name="binding_model_id" ref="pragtech_loan_advance.model_account_loan" />
+  <field name="binding_type">report</field>
+</record>
+
+<record id="f360_agrofin.action_report_loan_pagare_order" model="ir.actions.report">
+  <field name="name">Formato de Pagaré</field>
+  <field name="type">ir.actions.report</field>
+  <field name="model">account.loan</field>
+  <field name="report_name">loan_pagare_report_py3o</field>
+  <field name="report_type">py3o</field>
+  <field name="py3o_filetype">pdf</field>
+  <field name="module">f360_agrofin</field>
+  <field name="py3o_template_fallback">report/9_pagare.odt</field>
+  <field name="binding_model_id" ref="pragtech_loan_advance.model_account_loan" />
+  <field name="binding_type">report</field>
+</record>
+
+
+</odoo>
